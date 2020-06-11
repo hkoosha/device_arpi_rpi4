@@ -1,4 +1,4 @@
-#import /vendor/etc/init/hw/init.rpi4.usb.rc
+#import /vendor/etc/init/hw/init.erpi4.usb.rc
 
 on init
     # mount debugfs
@@ -14,7 +14,7 @@ on init
     write /sys/kernel/mm/ksm/run 1
 
 on fs
-    mount_all /vendor/etc/fstab.rpi4
+    mount_all /vendor/etc/fstab.erpi4
 
 on post-fs-data
     # Bluetooth

@@ -15,10 +15,11 @@
 #
 
 USE_OEM_TV_APP := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk) 
 
-PRODUCT_NAME := rpi4
-PRODUCT_DEVICE := rpi4
+PRODUCT_NAME := erpi4
+PRODUCT_DEVICE := erpi4
 PRODUCT_BRAND := endorphin
 PRODUCT_MANUFACTURER := Endorphin
 PRODUCT_MODEL := Raspberry Pi 4
@@ -50,10 +51,10 @@ PRODUCT_PACKAGES += \
 # system packages
 PRODUCT_PACKAGES += \
     libGLES_mesa \
-    gralloc.rpi4 \
-    memtrack.rpi4 \
-    gatekeeper.rpi4 \
-    audio.primary.rpi4 \
+    gralloc.erpi4 \
+    memtrack.erpi4 \
+    gatekeeper.erpi4 \
+    audio.primary.erpi4 \
     audio.usb.default \
     wificond \
     wifilogd \
@@ -62,9 +63,9 @@ PRODUCT_PACKAGES += \
 
 # hardware/interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-service.rpi4 \
-    android.hardware.graphics.mapper@2.0-impl.rpi4 \
-    android.hardware.graphics.composer@2.1-service.rpi4 \
+    android.hardware.graphics.allocator@2.0-service.erpi4 \
+    android.hardware.graphics.mapper@2.0-impl.erpi4 \
+    android.hardware.graphics.composer@2.1-service.erpi4 \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.audio@2.0-service \
@@ -85,13 +86,13 @@ PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    $(LOCAL_PATH)/rpi4_core_hardware.xml:system/etc/permissions/rpi4_core_hardware.xml \
+    $(LOCAL_PATH)/erpi4_core_hardware.xml:system/etc/permissions/erpi4_core_hardware.xml \
     $(LOCAL_PATH)/init.usb.rc:root/init.usb.rc \
-    $(LOCAL_PATH)/init.rpi4.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.rpi4.rc \
-    $(LOCAL_PATH)/init.rpi4.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.rpi4.usb.rc \
-    $(LOCAL_PATH)/ueventd.rpi4.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
-    $(LOCAL_PATH)/fstab.rpi4:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rpi4 \
-    $(LOCAL_PATH)/fstab.rpi4:$(TARGET_COPY_OUT_RAMDISK)/fstab.rpi4 \
+    $(LOCAL_PATH)/init.erpi4.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.erpi4.rc \
+    $(LOCAL_PATH)/init.erpi4.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.erpi4.usb.rc \
+    $(LOCAL_PATH)/ueventd.erpi4.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    $(LOCAL_PATH)/fstab.erpi4:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.erpi4 \
+    $(LOCAL_PATH)/fstab.erpi4:$(TARGET_COPY_OUT_RAMDISK)/fstab.erpi4 \
     $(LOCAL_PATH)/Generic.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Generic.kl \
     $(LOCAL_PATH)/firmware/brcm/brcmfmac43455-sdio.bin:root/lib/firmware/brcm/brcmfmac43455-sdio.bin \
     $(LOCAL_PATH)/firmware/brcm/brcmfmac43455-sdio.bin:$(TARGET_COPY_OUT_RAMDISK)/lib/firmware/brcm/brcmfmac43455-sdio.bin \
@@ -116,7 +117,7 @@ PRODUCT_COPY_FILES := \
     frameworks/base/data/sounds/effects/ogg/Effect_Tick_48k.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/Effect_Tick.ogg \
     $(PRODUCT_COPY_FILES)
 
-DEVICE_PACKAGE_OVERLAYS := device/endorphin/rpi4/overlay
+DEVICE_PACKAGE_OVERLAYS := device/endorphin/erpi4/overlay
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := tablet
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)

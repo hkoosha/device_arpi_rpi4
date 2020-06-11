@@ -63,6 +63,6 @@ BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 USE_CAMERA_STUB := true
 
 BOARD_SEPOLICY_DIRS := \
-    device/endorphin/rpi4/sepolicy
+    device/endorphin/erpi4/sepolicy
 
-DEVICE_MANIFEST_FILE := device/endorphin/rpi4/manifest.xml
+DEVICE_MANIFEST_FILE := device/endorphin/erpi4/manifest.xml
