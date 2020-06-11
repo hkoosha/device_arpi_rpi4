@@ -54,7 +54,7 @@
     </string-array>
 
     <!-- Apps that are authorized to access shared accounts -->
-    <string name="config_appsAuthorizedForSharedAccounts">;com.android.tv.settings;</string>
+    <string name="config_appsAuthorizedForSharedAccounts">;com.android.settings;</string>
 
     <!--
        Sets the package names whose certificates should be used to
