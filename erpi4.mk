@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-USE_OEM_TV_APP := true
 # $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk) 
 
@@ -33,7 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609 \
     wifi.interface=wlan0 \
     debug.sf.nobootanimation=1 \
-		qemu.hw.mainkeys=0
+    qemu.hw.mainkeys=0
 
 # application packages
 PRODUCT_PACKAGES += \
